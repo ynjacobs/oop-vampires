@@ -1,5 +1,6 @@
 class Vampire:
     coven = []
+
     def __init__(self, name, age):
         self.name = name
         self.age = age
@@ -14,25 +15,25 @@ class Vampire:
 
     def drink_blood(self):
         self.drank_blood_today = True
-         
+      
     @classmethod
     def sunrise(cls):
         for self in Vampire.coven:
-            if self.in_coffin == False or self.drank_blood_today == False:
-             Vampire.coven.remove(self)
+            if self.in_coffin is False or self.drank_blood_today is False:
+                Vampire.coven.remove(self)
 
     @classmethod
     def sunset(cls):
         for self in Vampire.coven:
-         self.drank_blood_today = False
-         self.in_coffin = False
-
+            self.drank_blood_today = False
+            self.in_coffin = False
 
     def go_home(self):
         self.in_coffin = True
 
     def __repr__(self):
         return ' {} , {}-{} '.format(self.name, self.drank_blood_today, self.in_coffin)
+
 
 the_vampire = Vampire.create('John', '45')
 vampire2 = Vampire.create('Max', '66')
